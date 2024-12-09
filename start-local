@@ -507,7 +507,9 @@ EOM
 
 create_docker_compose_file() {
   # Create the docker-compose-yml file
-  cat > docker-compose.yml <<-'EOM'
+  #cat > docker-compose.yml
+  mv ../docker-compose.yml .
+  cat > /tmp/docker-compose.ymlv <<-'EOM'
 services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:${ES_LOCAL_VERSION}
@@ -666,7 +668,7 @@ main() {
   create_stop_file
   create_uninstall_file
   create_env_file
-  #create_docker_compose_file
+  create_docker_compose_file
   print_steps
   running_docker_compose
   api_key
