@@ -1,6 +1,6 @@
 networks:
   elastic:
-    driver: local
+    driver: bridge
 
 services:
   elasticsearch:
