@@ -23,7 +23,7 @@ services:
       - cluster.routing.allocation.disk.watermark.flood_stage=${ES_LOCAL_DISK_SPACE_REQUIRED}
       #- node.name=es01
       #- cluster.name=${CLUSTER_NAME}
-      - bootstrap.memory_lock=true
+      #- bootstrap.memory_lock=true
       - xpack.security.authc.token.enabled=true
       - xpack.security.authc.realms.oidc.oidc1.order=2
       - xpack.security.authc.realms.oidc.oidc1.rp.client_id=kibana
