@@ -54,6 +54,8 @@ startup() {
   kibana_container_name="kibana-local-dev"
   # Minimum disk space required for docker images + services (in GB)
   min_disk_space_required=5
+  keycloak_container_name="keycloak-local-dev"
+  postgres_container_name="postgres-local-dev"
 }
 
 # Get linux distribution
@@ -343,6 +345,8 @@ KIBANA_LOCAL_CONTAINER_NAME=$kibana_container_name
 KIBANA_LOCAL_PORT=5601
 KIBANA_LOCAL_PASSWORD=$kibana_password
 KIBANA_ENCRYPTION_KEY=$kibana_encryption_key
+KEYCLOAK_LOCAL_CONTAINER_NAME=$keycloak_container_name
+POSTGRES_LOCAL_CONTAINER_NAME=$postgres_container_name
 EOM
 }
 

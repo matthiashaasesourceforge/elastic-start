@@ -85,6 +85,7 @@ services:
 
   keycloak:
     image: quay.io/keycloak/keycloak:24.0.3
+    container_name: ${KEYCLOAK_LOCAL_CONTAINER_NAME}
     restart: always
     command: start-dev
     environment:
@@ -109,6 +110,7 @@ services:
   
   postgres:
     image: postgres:15
+    container_name: ${POSTGRES_LOCAL_CONTAINER_NAME}
     environment:
       POSTGRES_USER: keycloak
       POSTGRES_PASSWORD: password
