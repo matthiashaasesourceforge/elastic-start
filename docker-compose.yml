@@ -21,6 +21,23 @@ services:
       - cluster.routing.allocation.disk.watermark.low=${ES_LOCAL_DISK_SPACE_REQUIRED}
       - cluster.routing.allocation.disk.watermark.high=${ES_LOCAL_DISK_SPACE_REQUIRED}
       - cluster.routing.allocation.disk.watermark.flood_stage=${ES_LOCAL_DISK_SPACE_REQUIRED}
+      - node.name=es01
+      - cluster.name=${CLUSTER_NAME}
+      - bootstrap.memory_lock=true
+      - xpack.security.authc.token.enabled=true
+      - xpack.security.authc.realms.oidc.oidc1.order=2
+      - xpack.security.authc.realms.oidc.oidc1.rp.client_id=kibana
+      - xpack.security.authc.realms.oidc.oidc1.rp.response_type=code
+      - xpack.security.authc.realms.oidc.oidc1.rp.redirect_uri=${KEYCLOAK_ES_REDIRECT_URI}
+      - xpack.security.authc.realms.oidc.oidc1.op.issuer=${KEYCLOAK_ES_ISSUER}
+      - xpack.security.authc.realms.oidc.oidc1.op.authorization_endpoint=${KEYCLOAK_ES_AUTHORIZATION_ENDPOINT}
+      - xpack.security.authc.realms.oidc.oidc1.op.token_endpoint=${KEYCLOAK_ES_TOKEN_ENDPOINT}
+      - xpack.security.authc.realms.oidc.oidc1.op.jwkset_path=${KEYCLOAK_ES_JWKSET_PATH}
+      - xpack.security.authc.realms.oidc.oidc1.op.userinfo_endpoint=${KEYCLOAK_ES_USER_INFO_ENDPOINT}
+      - xpack.security.authc.realms.oidc.oidc1.op.endsession_endpoint=${KEYCLOAK_LOGOUT_API}
+      - xpack.security.authc.realms.oidc.oidc1.rp.post_logout_redirect_uri=${KEYCLOAK_POST_LOGOUT_REDIRECT}
+      - xpack.security.authc.realms.oidc.oidc1.claims.principal=sub
+      - xpack.security.authc.realms.oidc.oidc1.claims.groups=http://example.info/claims/groups
     ulimits:
       memlock:
         soft: -1
