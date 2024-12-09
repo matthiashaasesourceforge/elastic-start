@@ -347,6 +347,7 @@ KIBANA_LOCAL_PASSWORD=$kibana_password
 KIBANA_ENCRYPTION_KEY=$kibana_encryption_key
 KEYCLOAK_LOCAL_CONTAINER_NAME=$keycloak_container_name
 POSTGRES_LOCAL_CONTAINER_NAME=$postgres_container_name
+CLUSTER_NAME=docker-cluster
 KEYCLOAK_ES_REDIRECT_URI=http://0.0.0.0:5601/api/security/oidc/callback
 KEYCLOAK_ES_CLIENT_ID=kibana
 KEYCLOAK_ES_CLIENT_SECRET=somesecret
