@@ -662,7 +662,7 @@ main() {
   create_stop_file
   create_uninstall_file
   create_env_file
-  create_docker_compose_file
+  #create_docker_compose_file
   print_steps
   running_docker_compose
   api_key
